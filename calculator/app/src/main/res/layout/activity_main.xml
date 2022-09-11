@@ -5,16 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="bottom"
-    android:background="@color/white"
+    android:background="@color/background"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/tv_displayEquation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans"
         android:singleLine="true"
-        android:textColor="#595656"
-        android:textSize="24sp"/>
+        android:paddingStart="8dp"
+        android:ellipsize="marquee"
+        android:scrollHorizontally="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textColor="@color/text_color"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/et_showEquations"
@@ -24,27 +29,28 @@
         android:ems="10"
         android:focusable="false"
         android:focusableInTouchMode="false"
+        android:fontFamily="@font/open_sans"
         android:gravity="start|top"
         android:maxLines="2"
         android:scrollHorizontally="true"
         android:selectAllOnFocus="false"
         android:singleLine="false"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="64sp" />
 
     <TableLayout
         android:id="@+id/tl_calcHolder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
         android:gravity="bottom">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="4dp"
-            android:layout_weight="4"
-            android:gravity="center">
+            android:gravity="bottom"
+            android:layout_weight="1">
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -58,16 +64,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="7"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -83,15 +91,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="8"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -112,7 +122,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -120,8 +131,9 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="9"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -137,15 +149,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_opersation_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="/"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -161,7 +175,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="1"
             android:gravity="center">
 
             <FrameLayout
@@ -177,7 +191,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:src="@android:color/transparent" />
+                    android:src="@android:color/transparent"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -185,9 +200,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="4"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -203,15 +219,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="5"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -232,7 +250,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -240,8 +259,9 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="6"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -257,15 +277,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_opersation_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="*"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -281,7 +303,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="1"
             android:gravity="center">
 
             <FrameLayout
@@ -297,7 +319,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:src="@android:color/transparent" />
+                    android:src="@android:color/transparent"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -305,9 +328,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -323,15 +347,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="2"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -353,7 +379,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:src="@android:color/transparent" />
+                    android:src="@android:color/transparent"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -361,8 +388,9 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="3"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -378,15 +406,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_opersation_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="-"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -402,7 +432,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="1"
             android:gravity="center">
 
             <FrameLayout
@@ -416,7 +446,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:src="@android:color/transparent" />
+                    android:src="@android:color/transparent"
+                    app:backgroundTint="@color/button_opersation_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -424,9 +455,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="C"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -440,15 +472,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="0"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -468,7 +502,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
-                    android:src="@android:color/transparent" />
+                    android:src="@android:color/transparent"
+                    app:backgroundTint="@color/button_opersation_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -476,8 +511,9 @@
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
                     android:elevation="16dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="="
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="32sp" />
             </FrameLayout>
 
@@ -491,15 +527,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp" />
+                    android:layout_margin="8dp"
+                    app:backgroundTint="@color/button_opersation_background" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/open_sans"
                     android:text="+"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="32sp"
                     android:translationZ="1000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
