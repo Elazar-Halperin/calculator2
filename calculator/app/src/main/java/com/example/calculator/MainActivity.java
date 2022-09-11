@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String DIVIDE = "/";
     public static final String EQUALS = "=";
     public static final String CLEAR = "c";
+
     TableLayout tl_calcHolder;
     FloatingActionButton[][] fab_buttons;
     TextView[][] tv_buttonsText;
@@ -112,27 +113,27 @@ public class MainActivity extends AppCompatActivity {
         // if its clear operation then we want to cleat the edit text and the string.
 
         if(operation.equals(PLUS)) {
-            addFunction(operation);
+            addSymbolFunc(operation);
             return;
         }
 
         if(operation.equals(SUBTRACT)) {
-            subtractFunction(operation);
+            addSymbolFunc(operation);
             return;
         }
 
         if(operation.equals(MULTIPLY)) {
-            multiplyFunction(operation);
+            addSymbolFunc(operation);
             return;
         }
 
         if(operation.equals(DIVIDE)) {
-            divideFunction(operation);
+            addSymbolFunc(operation);
             return;
         }
 
         if(operation.equals(EQUALS)) {
-            equalsFunction(operation);
+            equalsFunction();
             return;
         }
 
@@ -146,11 +147,11 @@ public class MainActivity extends AppCompatActivity {
         String currentText = et_showEquations.getText().toString().trim();
 
         if(currentText.length() >= 15) {
-            makeMessage("you reached the maximum length");
+            makeMessage("you reached the maximum length!");
             return;
         }
 
-        et_showEquations.setText(currentText + operation);
+        et_showEquations.setText(new StringBuilder().append(currentText).append(operation).toString());
 
     }
 
@@ -164,33 +165,33 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void equalsFunction(String symbol) {
+    private void equalsFunction() {
         if(operation.isEmpty() || first.isEmpty()) {
             return;
         }
 
         try {
-            float firstInt = Float.parseFloat(first);
-            float secondInt = Float.parseFloat(et_showEquations.getText().toString().trim());
+            float firstFloat = Float.parseFloat(first);
+            float secondFloat = Float.parseFloat(et_showEquations.getText().toString().trim());
             float result = 0f;
             if(operation.equals(PLUS)) {
-                result = firstInt + secondInt;
+                result = firstFloat + secondFloat;
             }
             if(operation.equals(SUBTRACT)) {
-                result = firstInt - secondInt;
+                result = firstFloat - secondFloat;
             }
             if(operation.equals(MULTIPLY)) {
-                result = firstInt * secondInt;
+                result = firstFloat * secondFloat;
             }
             if(operation.equals(DIVIDE)) {
-                if (secondInt == 0) {
+                if (secondFloat == 0) {
                     makeMessage("Can not divide by 0!");
                     return;
                 }
-                result = firstInt / secondInt;
+                result = firstFloat / secondFloat;
             }
             // the second will be always int.
-            equation += (int) secondInt + " = ";
+            equation += (int) secondFloat + " = ";
 
             Log.d("hellothere", result +"");
 
@@ -214,35 +215,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void divideFunction(String symbol) {
-        if(!operation.isEmpty()) {
-            return;
-        }
-        setOperationAndDisplayIt(symbol);
-        setFirstToEtContent();
-    }
-
-    private void multiplyFunction(String symbol) {
-        if(!operation.isEmpty()) {
-            return;
-        }
-        setOperationAndDisplayIt(symbol);
-        setFirstToEtContent();
-
-    }
-
-    private void subtractFunction(String symbol) {
-        if(!operation.isEmpty()) {
-            return;
-        }
-        setOperationAndDisplayIt(symbol);
-        setFirstToEtContent();
-    }
-
-    private void addFunction(String symbol) {
-        if(!operation.isEmpty()) {
-            return;
-        }
+    private void addSymbolFunc(String symbol) {
         setOperationAndDisplayIt(symbol);
         setFirstToEtContent();
     }

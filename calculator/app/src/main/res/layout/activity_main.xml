@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="bottom"
+    android:background="@color/white"
     tools:context=".MainActivity">
     <TextView
         android:id="@+id/tv_displayEquation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
+        android:textColor="#595656"
         android:textSize="24sp"/>
 
     <EditText
