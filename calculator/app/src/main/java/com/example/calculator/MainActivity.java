@@ -30,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String FIRST_STRING_KEY = "first string key";
     public static final String OPERATOR_KEY = "operator key";
     public static final String EQUATION_KEY = "equation key";
-
-
+    public static final String CURRENT_EDIT_TEXT_VALUE = "current editText value";
 
 
     TableLayout tl_calcHolder;
@@ -70,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
             equation = savedInstanceState.getString(EQUATION_KEY);
             first = savedInstanceState.getString(FIRST_STRING_KEY);
             operation = savedInstanceState.getString(OPERATOR_KEY);
+
+            et_showEquations.setText(savedInstanceState.getString(CURRENT_EDIT_TEXT_VALUE));
 
             tv_displayEquation.setText(equation);
         }
@@ -309,6 +310,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(FIRST_STRING_KEY, first);
         outState.putString(OPERATOR_KEY, operation);
         outState.putString(EQUATION_KEY, equation);
+        outState.putString(CURRENT_EDIT_TEXT_VALUE, et_showEquations.getText().toString().trim());
         super.onSaveInstanceState(outState);
     }
 }

@@ -31,6 +31,8 @@
         android:focusableInTouchMode="false"
         android:fontFamily="@font/open_sans"
         android:gravity="start|top"
+        android:clickable="false"
+        android:longClickable="false"
         android:maxLines="2"
         android:scrollHorizontally="true"
         android:selectAllOnFocus="false"
