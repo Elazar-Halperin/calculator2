@@ -43,8 +43,8 @@
     <TableLayout
         android:id="@+id/tl_calcHolder"
         android:layout_width="match_parent"
-        android:layout_gravity="bottom"
         android:layout_height="match_parent"
+        android:layout_gravity="bottom"
         android:gravity="bottom">
 
         <TableRow
